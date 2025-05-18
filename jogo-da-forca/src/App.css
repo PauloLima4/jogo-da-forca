@@ -81,7 +81,7 @@ body {
 
 button {
   margin-top: 1rem;
-  background-color: #fff;
+  background-color: #d1b3ff;
   color: #4a148c;
   border: none;
   padding: 10px 16px;
@@ -92,7 +92,7 @@ button {
 }
 
 button:hover {
-  background-color: #d1b3ff;
+  background-color: #e0d4ff;
 }
 
 input[type="text"] {
