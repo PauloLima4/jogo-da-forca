@@ -50,9 +50,9 @@ body {
 }
 
 .letter {
-  font-size: 2.0rem;
-  width: 33px;
-  height: 35px;
+  font-size: 2.5rem;
+  width: 36px;
+  height: 40px;
   border-bottom: 3px solid #6a0dad;
   text-transform: uppercase;
   text-align: center;
