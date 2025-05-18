@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
 const tema = [
-  "elefante", "girafa", "canguru", "pinguim", "golfinho", "jacare", "zebra", "leao",
-  "tigre", "hipopotamo", "aguia", "rinoceronte", "raposa", "sapo", "foca", "morsa",
-  "peixe", "tubarao", "gaviao", "cachorro", "gato", "rato", "cobra", "caracol", "lesma",
-  "ornitorrinco", "touro", "abelha", "porco", "joaninha", "tartaruga", "cavalo", "lobo", "leopardo"
+  "elefante", "girafa", "canguru", "pinguim", "golfinho", "jacare",
+  "zebra", "leao", "tigre", "hipopotamo", "aguia", "rinoceronte",
+  "raposa", "sapo", "foca", "morsa", "peixe", "tubarao", "gaviao",
+  "cachorro", "gato", "rato", "cobra", "caracol", "lesma",
+  "ornitorrinco", "touro", "abelha", "porco", "joaninha",
+  "tartaruga", "cavalo", "lobo", "leopardo"
 ];
 
 const getRandomWord = () => tema[Math.floor(Math.random() * tema.length)];
@@ -18,11 +20,11 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const [score, setScore] = useState(0);
+  const inputRef = useRef(null);
 
   const maxTries = 6;
 
-  const handleKeyPress = (e) => {
-    const letter = e.key.toLowerCase();
+  const handleGuess = (letter) => {
     if (/^[a-z]$/.test(letter) && !gameOver) {
       if (word.includes(letter)) {
         if (!guessedLetters.includes(letter)) {
@@ -36,6 +38,10 @@ function App() {
     }
   };
 
+  const handleKeyPress = (e) => {
+    handleGuess(e.key.toLowerCase());
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
@@ -46,22 +52,16 @@ function App() {
     if (isWinner) {
       setWin(true);
       setGameOver(true);
-      // Atualiza o score conforme erros
       const errors = wrongGuesses.length;
-      let points = 0;
-      if (errors === 0) points = 10;
-      else if (errors === 1) points = 8;
-      else if (errors === 2) points = 6;
-      else if (errors === 3) points = 3;
-      else if (errors === 4) points = 2;
-      else if (errors === 5) points = 1;
-      // Se erros = 6 (perdeu), não soma pontos
-      setScore(prev => prev + points);
+      if (errors === 0) setScore(score + 10);
+      else if (errors === 1) setScore(score + 8);
+      else if (errors === 2) setScore(score + 6);
+      else if (errors === 3) setScore(score + 3);
+      else if (errors === 4) setScore(score + 2);
+      else if (errors === 5) setScore(score + 1);
     }
     if (wrongGuesses.length >= maxTries) {
       setGameOver(true);
-      setWin(false);
-      // Não soma pontos
     }
   }, [guessedLetters, wrongGuesses, word]);
 
@@ -71,6 +71,7 @@ function App() {
     setWrongGuesses([]);
     setGameOver(false);
     setWin(false);
+    inputRef.current?.focus();
   };
 
   const resetScore = () => {
@@ -80,7 +81,7 @@ function App() {
   const renderWord = () =>
     word.split("").map((letter, index) => (
       <span key={index} className="letter">
-        {guessedLetters.includes(letter) || gameOver ? letter : ""}
+        {guessedLetters.includes(letter) || gameOver ? letter : "_"}
       </span>
     ));
 
@@ -90,9 +91,26 @@ function App() {
         🐾 Jogo da Forca - Animais 🐾
       </motion.h1>
 
-      <div className="score">Score: {score}</div>
+      <div className="score-box">
+        <p>🎯 Pontuação: {score}</p>
+        <button onClick={resetScore}>Zerar Pontuação</button>
+      </div>
 
       <div className="word-box">{renderWord()}</div>
+
+      <input
+        type="text"
+        maxLength="1"
+        ref={inputRef}
+        onChange={(e) => {
+          handleGuess(e.target.value.toLowerCase());
+          e.target.value = "";
+        }}
+        className="mobile-input"
+        autoFocus
+        inputMode="text"
+        pattern="[a-zA-Z]"
+      />
 
       <motion.div className="status" initial={{ scale: 0.5 }} animate={{ scale: 1 }}>
         <p>Letras erradas: {wrongGuesses.join(", ")}</p>
@@ -107,14 +125,11 @@ function App() {
         >
           <p>{win ? "🎉 Você venceu! 🎉" : `💀 Você perdeu! A palavra era: ${word}`}</p>
           <button onClick={resetGame}>Jogar Novamente</button>
-          <button onClick={resetScore} style={{marginLeft: "10px", backgroundColor:"#6a4fff"}}>
-            Resetar Score
-          </button>
         </motion.div>
       )}
 
       <footer>
-        <p>Digite letras no teclado para adivinhar o animal!</p>
+        <p>Digite letras no teclado ou use o campo acima para adivinhar o animal!</p>
       </footer>
     </div>
   );
