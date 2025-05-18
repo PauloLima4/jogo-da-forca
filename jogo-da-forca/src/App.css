@@ -1,0 +1,225 @@
+/* App.css - Estilo moderno com boneco da forca em tons de roxo */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.app {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: #6c3483;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.word-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.letter {
+  font-size: 1.8rem;
+  width: 36px;
+  height: 48px;
+  border-bottom: 2px solid #6c3483;
+  text-transform: uppercase;
+  color: #6c3483;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.status {
+  margin: 20px 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+.result {
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.result.win {
+  background-color: #e8f5e9;
+  color: #388e3c;
+  border: 1px solid #c8e6c9;
+}
+
+.result.lose {
+  background-color: #fbe9e7;
+  color: #d32f2f;
+  border: 1px solid #ef9a9a;
+}
+
+button {
+  margin-top: 1rem;
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #732d91;
+}
+
+.hangman-drawing {
+  margin: 30px auto;
+  width: 160px;
+  height: 200px;
+  position: relative;
+}
+
+.hangman-drawing .bar {
+  background-color: #6c3483;
+  position: absolute;
+}
+
+.pole {
+  width: 6px;
+  height: 100%;
+  left: 20px;
+  bottom: 0;
+}
+
+.beam {
+  width: 100px;
+  height: 6px;
+  left: 20px;
+  top: 0;
+}
+
+.rope {
+  width: 2px;
+  height: 30px;
+  top: 6px;
+  left: 120px;
+  background-color: #6c3483;
+}
+
+.head {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #6c3483;
+  border-radius: 50%;
+  position: absolute;
+  top: 36px;
+  left: 105px;
+  display: none;
+}
+
+.body {
+  width: 4px;
+  height: 40px;
+  background-color: #6c3483;
+  position: absolute;
+  top: 66px;
+  left: 119px;
+  display: none;
+}
+
+.arm-left {
+  width: 30px;
+  height: 4px;
+  background-color: #6c3483;
+  position: absolute;
+  top: 80px;
+  left: 90px;
+  transform: rotate(45deg);
+  transform-origin: left;
+  display: none;
+}
+
+.arm-right {
+  width: 30px;
+  height: 4px;
+  background-color: #6c3483;
+  position: absolute;
+  top: 80px;
+  left: 120px;
+  transform: rotate(-45deg);
+  transform-origin: right;
+  display: none;
+}
+
+.leg-left {
+  width: 30px;
+  height: 4px;
+  background-color: #6c3483;
+  position: absolute;
+  top: 106px;
+  left: 92px;
+  transform: rotate(45deg);
+  transform-origin: left;
+  display: none;
+}
+
+.leg-right {
+  width: 30px;
+  height: 4px;
+  background-color: #6c3483;
+  position: absolute;
+  top: 106px;
+  left: 118px;
+  transform: rotate(-45deg);
+  transform-origin: right;
+  display: none;
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6a4fff;
+  margin: 10px 0 20px 0;
+  text-shadow: 1px 1px 4px rgba(106, 79, 255, 0.7);
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .letter {
+    width: 32px;
+    height: 42px;
+    font-size: 1.5rem;
+  }
+}
