@@ -44,7 +44,7 @@ body {
 .word-box {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin: 15px 0;
   flex-wrap: wrap; 
 }
