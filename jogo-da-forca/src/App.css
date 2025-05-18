@@ -124,6 +124,8 @@ footer {
     width: 2.2rem;
     height: 2.8rem;
     line-height: 2.8rem;
+    color: #fff;
+    border-bottom: 3px solid #fff;
   }
 
   .hangman-figure {
