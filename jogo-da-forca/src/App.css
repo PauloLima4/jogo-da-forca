@@ -43,24 +43,26 @@ body {
 
 .word-box {
   display: flex;
-  flex-wrap: wrap;       
-  justify-content: center; 
-  max-width: 100%;        
-  overflow-wrap: break-word; 
-  word-break: break-word;
-  gap: 10px;
+  justify-content: center;  
+  gap: 10px;              
+  flex-wrap: nowrap;        
+  overflow-x: auto;       
+  padding: 0 10px;          
+  user-select: none;
 }
 
 .letter {
-  font-size: 5vw;      
-  width: 10vw;           
-  height: 14vw;          
-  max-width: 40px;       
-  max-height: 50px;
-  border-bottom: 3px solid #eee;
+  font-size: 3.5rem;        
+  width: 3.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  border-bottom: 3px solid #ddd;
   text-transform: uppercase;
   text-align: center;
-  line-height: 14vw;
+  color: #4b0082;           
+  background-color: #f4f0fa; 
+  border-radius: 5px;
+  flex-shrink: 0;         
   user-select: none;
 }
 
@@ -159,9 +161,9 @@ input[type="text"] {
 /* Smartphones */
 @media (max-width: 600px) {
   .letter {
-    font-size: 6vw;
-    width: 12vw;
-    height: 18vw;
-    line-height: 18vw;
+    font-size: 2.8rem;
+    width: 2.8rem;
+    height: 3.8rem;
+    line-height: 3.8rem;
   }
 }
