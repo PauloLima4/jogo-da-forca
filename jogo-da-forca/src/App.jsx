@@ -80,7 +80,7 @@ function App() {
   const renderWord = () =>
     word.split("").map((letter, index) => (
       <span key={index} className="letter">
-        {guessedLetters.includes(letter) || gameOver ? letter.toUpperCase() : ""}
+        {guessedLetters.includes(letter) || gameOver ? letter : ""}
       </span>
     ));
 
