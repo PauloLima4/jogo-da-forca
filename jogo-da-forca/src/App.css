@@ -32,6 +32,7 @@ body {
 .score {
   font-weight: bold;
   font-size: 1.2rem;
+  color: #555;
 }
 
 .word-box {
@@ -79,8 +80,8 @@ body {
 
 button {
   margin-top: 1rem;
-  background-color: #9b30ff;
-  color: white;
+  background-color: #e0d4ff;
+  color: #4a148c;
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
@@ -90,15 +91,17 @@ button {
 }
 
 button:hover {
-  background-color: #6a0dad;
+  background-color: #d1b3ff;
 }
 
 input[type="text"] {
   padding: 10px;
   font-size: 1rem;
-  border: 2px solid #9b30ff;
+  border: 2px solid #ccc;
   border-radius: 8px;
   outline: none;
+  background-color: #f0f0f0;
+  color: #333;
   width: 100%;
   max-width: 300px;
   margin: 0 auto;
