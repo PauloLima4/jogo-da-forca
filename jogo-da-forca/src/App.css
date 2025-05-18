@@ -53,6 +53,8 @@ body {
   text-transform: uppercase;
   line-height: 3.5rem;
   user-select: none;
+  color: #fff;
+  border-bottom: 3px solid #fff;
 }
 
 .status {
