@@ -62,5 +62,6 @@ jogo-da-forca/
 ## ✉️ Contact
 Created by Paulo Lima & Plazoom.
 For questions or feedback, reach out:
+- Instagram: @Plazoomoficial
 - Email: plazomoficial@gmail.com
 - Phone: (85) 97400-1619
