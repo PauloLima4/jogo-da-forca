@@ -58,6 +58,8 @@ body {
   text-align: center;
   color: #6a0dad;
   user-select: none;
+  padding-bottom: 6px;  
+  line-height: 1;      
 }
 
 .status { 
