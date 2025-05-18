@@ -80,9 +80,8 @@ body {
 }
 
 button {
-  margin-top: 1rem;
-  background-color: #d1b3ff;
-  color: #4a148c;
+  background-color: #9b30ff; /* roxo vibrante */
+  color: white;
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
@@ -92,7 +91,7 @@ button {
 }
 
 button:hover {
-  background-color: #e0d4ff;
+  background-color: #6a0dad; /* roxo mais escuro no hover */
 }
 
 input[type="text"] {
