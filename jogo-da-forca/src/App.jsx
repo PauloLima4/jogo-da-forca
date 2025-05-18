@@ -91,8 +91,8 @@ function App() {
         🐾 Jogo da Forca - Animais 🐾
       </motion.h1>
 
-      <div className="score-box">
-        <p>🎯 Pontuação: {score}</p>
+      <div className="score">
+        <p>Pontuação: {score}</p>
         <button onClick={resetScore}>Zerar Pontuação</button>
       </div>
 
