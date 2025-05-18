@@ -16,52 +16,54 @@ body {
   border-radius: 16px;
   max-width: 500px;
   width: 100%;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .title {
   font-size: 2rem;
-  color: #333;
-  margin-bottom: 1rem;
+  color: #6a0dad;
+  margin-bottom: 0.5rem;
 }
 
 .score {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #6a0dad;
   font-weight: bold;
+  font-size: 1.2rem;
+  color: #555;
 }
 
 .word-box {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
   flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
 }
 
 .letter {
   font-size: 2rem;
   width: 32px;
   height: 40px;
-  border-bottom: 3px solid #333;
+  border-bottom: 3px solid #6a0dad;
+  color: #222;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333;
 }
 
 .status {
-  margin: 20px 0;
-  color: #555;
+  font-size: 1rem;
+  color: #444;
 }
 
 .result {
   padding: 20px;
-  margin-top: 20px;
   border-radius: 12px;
+  font-size: 1.1rem;
 }
 
 .result.win {
@@ -89,52 +91,43 @@ button {
 }
 
 button:hover {
-  background-color: #7e22ce;
+  background-color: #6a0dad;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #9b30ff;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 footer {
   margin-top: 20px;
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.85rem;
+  color: #555;
 }
 
+/* Responsividade */
 @media (max-width: 600px) {
-  .app {
-    padding: 1rem;
-  }
-
   .title {
     font-size: 1.5rem;
   }
 
   .letter {
-    font-size: 1.5rem;
     width: 28px;
     height: 36px;
-    color: #333;
+    font-size: 1.6rem;
   }
 
-  .score {
-    font-size: 1rem;
+  .word-box {
+    gap: 6px;
   }
-}
 
-.input-wrapper {
-  margin-top: 1rem;
-}
-
-input[type="text"] {
-  padding: 10px;
-  font-size: 1.2rem;
-  width: 100%;
-  max-width: 100px;
-  text-align: center;
-  border: 2px solid #9b30ff;
-  border-radius: 8px;
-  outline: none;
-}
-
-input[type="text"]::placeholder {
-  color: #aaa;
-  font-size: 1rem;
+  button {
+    padding: 8px 14px;
+  }
 }
