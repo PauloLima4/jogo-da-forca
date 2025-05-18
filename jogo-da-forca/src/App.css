@@ -30,9 +30,10 @@ body {
 }
 
 .score {
-  font-weight: bold;
   font-size: 1.2rem;
-  color: #555;
+  font-weight: bold;
+  color: #f0f0f0; /* Ou use #ffffff para branco puro */
+  margin-bottom: 1rem;
 }
 
 .word-box {
