@@ -43,26 +43,20 @@ body {
 
 .word-box {
   display: flex;
-  justify-content: center;  
-  gap: 10px;              
-  flex-wrap: nowrap;        
-  overflow-x: auto;       
-  padding: 0 10px;          
-  user-select: none;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap; 
 }
 
 .letter {
-  font-size: 3.5rem;        
-  width: 3.5rem;
-  height: 4.5rem;
-  line-height: 4.5rem;
-  border-bottom: 3px solid #ddd;
+  font-size: 2.0rem;
+  width: 33px;
+  height: 35px;
+  border-bottom: 3px solid #6a0dad;
   text-transform: uppercase;
   text-align: center;
-  color: #4b0082;           
-  background-color: #f4f0fa; 
-  border-radius: 5px;
-  flex-shrink: 0;         
+  color: #6a0dad;
   user-select: none;
 }
 
