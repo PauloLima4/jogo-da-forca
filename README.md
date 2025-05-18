@@ -32,23 +32,7 @@
   - 4 errors → 2 points  
   - 5 errors → 1 point  
   - 6 errors → 0 points (lose)  
-- Score accumulates over multiple rounds.
-
----
-
-jogo-da-forca/
-│
-├── public/
-│   └── index.html
-│
-├── src/
-│   ├── App.jsx       
-│   ├── App.css        
-│   ├── index.jsx       
-│
-├── package.json      
-├── README.md         
-└── LICENSE.txt     
+- Score accumulates over multiple rounds.    
 
 ---
 
